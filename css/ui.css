@@ -1,4 +1,194 @@
+#delicious-opt-about {
+	height: 400px;
+}
+
+#bookmarks .yui3-treeview-row {
+	overflow: visible;
+}
+
+body,
+div {
+	margin: 0;
+	padding: 0;
+}
+
 body {
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+}
+
+hr {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+#bookmark-options {
+	float: right;
+}
+
+#popup-header {
+	overflow: hidden;
+	position: absolute;
+	width: 100%;
+	height: 25px;
+	/*padding: 5px;*/
+	background-color: #D3E1F1;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #99BCE8;
+}
+
+#bookmarks {
+	overflow-x: hidden;
+	overflow-y: auto;
+	position: absolute;
+	width: 100%;
+	top: 30px;
+	bottom: 0;
+}
+
+#header-content {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#delicious-opts-header {
+	line-height: 60px;
+	width: 760px;
+	margin-bottom: 20px;
+	border-style:solid;
+	border-width: 1px;
+	border-color: rgb(128, 128, 128);
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	background: #edf5ff;
+	font-size: 18pt;
+	font-weight: bold;
+	text-align: center;
+	text-shadow: #ccc 1px 1px 3px;
+}
+
+#delicious-opts {
+	width: 760px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#about-scrollbox-container {
+	margin: 30px;
+	overflow: auto;
+	background: white;
+	border-color: #CCC;
+	border-style: solid;
+	border-width: 1px;
+	height: 300px;
+	width: 90%;
+	float: left;
+}
+
+#about-scrollbox-text {
+	font-family: "Courier New", Courier, monospace;
+	margin: 20px;
+}
+
+td.option {
+	text-align: right;
+}
+
+textarea {
+	resize: none;
+}
+
+b.yui3-highlight {
+	color: red;
+}
+
+.delicious-option-block {
+	margin-left: 20px;
+	padding-bottom: 20px;
+}
+
+.normal {
+	font-weight: normal;
+	color: black;
+}
+
+.error {
+	font-weight: bold;
+	color: red;
+}
+
+.popup-menu-item {
+	padding-left: 4px;
+	padding-right: 4px;
+	vertical-align: middle;
+}
+
+
+.yui3-treeview-label {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 8pt;
 }
+
+.dialog-form-inner {
+	display: table;
+	width: 100%;
+	margin-top: 12px;
+	margin-bottom: 12px;
+}
+
+.dialog-form-label {
+	display: tabel-cell;
+}
+
+.dialog-form-text-input {
+	width: 98%;
+}
+
+/*span.tooltip-classic {
+	word-wrap: break-word;
+}*/
+
+.bookmark-tooltip {
+	border: none;
+	color: black;
+	text-decoration: none;
+	position: relative;
+}
+.bookmark-tooltip span {
+	margin-left: -999em;
+	position: absolute;
+}
+.bookmark-tooltip:hover span {
+	border-radius: 5px 5px; -webkit-border-radius: 5px; 
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1); -webkit-box-shadow: 5px 5px rgba(0, 0, 0, 0.1); 
+	/*font-family: Calibri, Tahoma, Geneva, sans-serif;*/
+	font-size: 8pt;
+	position: absolute; left: 1em; top: 2em; z-index: 99;
+	margin-left: 0; width: 300px;
+	word-wrap: break-word;
+}
+.bookmark-tooltip:hover img {
+	border: 0; margin: -10px 0 0 -55px;
+	float: left; position: absolute;
+}
+.bookmark-tooltip:hover em {
+	font-family: Candara, Tahoma, Geneva, sans-serif; font-size: 1.2em;
+	font-weight: bold;
+	display: block; padding: 0.2em 0 0.6em 0;
+}
+
+.tooltip-hidden {
+	display: none !important;
+}
+
+.tooltip-classic { padding: 0.8em 1em; }
+* html a:hover { background: transparent; }
+.tooltip-classic { background: #FFFFAA; border: 1px solid #FFAD33; }

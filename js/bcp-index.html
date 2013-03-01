@@ -1,0 +1,115 @@
+[gdanko@dev1 bcp-util]$ cat index.html
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<!-- 3.5.0pr2 -->
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<title>BCP Utility</title>
+		<link type="text/css" rel="stylesheet" href="http://dolemite.music.corp.mud.yahoo.com/bcp-util/css/bcp-util.css" />
+		<link type="text/css" rel="stylesheet" href="http://yui.yahooapis.com/3.4.1/build/cssfonts/fonts-min.css" />
+		<script type="text/javascript" src="http://yui.yahooapis.com/3.4.1/build/yui/yui-min.js"></script>
+		<script type="text/javascript" src="http://dolemite.music.corp.mud.yahoo.com/bcp-util/js/helpers.js"></script>
+		<script type="text/javascript" src="http://dolemite.music.corp.mud.yahoo.com/bcp-util/js/bcp-util.js"></script>
+	</head>
+
+	<body class="yui3-skin-sam">
+		<div id="bcp-util">
+			<div id="hd" class="yui3-g">
+				<header>
+					<div class="content">
+						<div class="yui3-u-3-4">
+							<img class="logo" alt="YUI Logo" src="images/GM_Logo.png">
+						</div>
+					</div>
+				</header>
+			</div>
+
+			<div id="bd" class="clearfix yui3-g hidden">
+				<h1>Yahoo! <span class="property-name"></span> BCP Utility</h1>
+				<h3>This utility automates the process of taking <span class="property-name"></span> hostgroups and colos in and out of rotation. Please use wth extreme caution.</h3>
+				<br>
+
+				<div id="bcp-util-content">
+					<h1>Toggle a specific colo:hostgroup</h1>
+					<h3>Click a cell in the table to toggle its status</h3>
+
+					<div id="brooklyn-status-container">
+						<table id="brooklyn-status" border="0">
+						</table>
+						<div id="brooklyn-status-timestamp"></div>
+					</div>
+					<br>
+
+					<h1>Toggle an entire colo</h1>
+					<h3>This action will fail all hostgroups in or out of the specified colo</h3>
+
+					<div id="bcp-selects">
+						<select id="select-bcp-colo" class="toggle-colo-menu">
+							<option value="null" selected="selected">Please select a colo</option>
+						</select>
+
+						<select id="select-bcp-action" class="toggle-colo-menu">
+							<option value="null" selected="selected">Please select an action</option>
+							<option value="in">In</option>
+							<option value="out">Out</option>
+						</select>
+					</div>
+
+					<div id="bcp-submit">
+						<button id="bcp-submit-button">Submit</button>
+					</div>
+					<br>
+
+					<div id="generic-dialog-content">
+						<div class="yui3-widget-bd">
+							<div id="generic-dialog-msg"></div>
+						</div>
+					</div>
+
+					<div id="confirm-dialog-content">
+						<div class="yui3-widget-bd">
+							<form id="confirm-dialog-form">
+								<fieldset>
+									<p>
+										<label for="oor-ttl">TTL</label><br/>
+										<input type="text" name="oor-ttl" id="oor-ttl" placeholder="">
+									</p>
+									<p>
+										<label for="oor-msg">Message</label><br/>
+										<input type="text" name="oor-msg" id="oor-msg" placeholder="">
+									</p>
+									<p>
+										<label for="oor-ticket">Ticket</label><br/>
+										<input type="text" name="oor-ticket" id="oor-ticket" placeholder="">
+									</p>
+								</fieldset>
+							</form>
+							<div id="confirm-dialog-form-msg"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="bcp-output-container" class="hidden">
+			<h1>Job Output</h1>
+			<div id="bcp-output" class="output"></div>
+		</div>
+
+		<div id="bcp-error-container" class="hidden">
+			<h1>Errors</h1>
+			<h3>One or more errors were found in your configuration file. Please fix them before proceeding.</h3>
+			<div id="bcp-errors"></div>
+		</div>
+
+		<div id="ft">
+			<footer>
+				<!--<div id="bcp-footer" class="content">
+					I did it!<br>
+					Contact Gary Danko for questions regarding this utility.
+				</div>-->
+			</footer>
+		</div>
+	</body>
+</html>
+[gdanko@dev1 bcp-util]$

@@ -1,15 +1,102 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-	<link type="text/css" rel="stylesheet" href="css/jquery-ui-1.10.0.custom.min.css" />
+	<link type="text/css" rel="stylesheet" href="css/fonts-min.css" />
 	<link type="text/css" rel="stylesheet" href="css/ui.css" />
-	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
-	<script type="text/javascript" src="js/jquery-ui-1.10.0.custom.min.js"></script>
-	<script type="text/javascript" src="js/jquery.jstree.js"></script>
-	<script type="text/javascript" src="js/sha1.js"></script>
+	<script type="text/javascript" src="js/config.js"></script>
+	<script type="text/javascript" src="yui3/build/yui/yui-min.js"></script>
 	<script type="text/javascript" src="js/popup.js"></script>
 </head>
 
-<body style="width: 200px">
-	<div id="jstree"></div>
+<body style="width:400px; height:600px" class="yui3-skin-sam">
+	<div id="wrapper">
+		<div id="popup-header">
+			<div>
+				<span><img id="bookmark-add" class="popup-menu-item" height="22" width="22" title="Add the current URL to Delicious" src="images/add-active.png"></span>
+				<span><img id="bookmark-edit" class="popup-menu-item" height="22" width="22" title="Edit the current bookmark" src="images/edit-active.png"></span>
+				<span><img id="bookmark-delete" class="popup-menu-item" height="22" width="22" title="Delete the current URL from Delicious" src="images/delete-active.png"></span>
+				<span><img id="bookmark-refresh" class="popup-menu-item" height="22" width="22" title="Reload bookmarks from Delicious" src="images/refresh-active.png"></span>
+				<!--<span id="bookmark-search"><input type="text" width="40" placeholder="coming soon!"></span>-->
+				<span><img id="bookmark-delicious" class="popup-menu-item" height="22" width="22" title="Delicious Website" src="images/delicious.png"></span>
+				<span><img id="bookmark-options" class="popup-menu-item" height="22" width="22" title="Options" src="images/options.png"></span>
+			</div>
+			<!--<hr align="center" width="98%">-->
+		</div>
+
+		<div id="bookmarks"></div>
+		</div>
+	</div>
+
+	<div id="dialogs-container">
+		<div id="add-bookmark-dialog" style="display:none">
+			<div class="yui3-widget-bd">
+				<div class="dialog-form-parent">
+
+					<div class="dialog-form-inner">
+						<label class="dialog-form-label">Title</label>
+						<input class="dialog-form-text-input" type="text" id="add-bookmark-title">
+					</div>
+
+					<div class="dialog-form-inner">
+						<label class="dialog-form-label">Location (URL)</label>
+						<input class="dialog-form-text-input" type="text" id="add-bookmark-url">
+					</div>
+
+					<div class="dialog-form-inner">
+						<label class="dialog-form-label">Tags</label>
+						<input class="dialog-form-text-input" type="text" id="add-bookmark-tags">
+					</div>
+
+					<div class="dialog-form-inner">
+						<label class="dialog-form-label">Comments</label>
+						<textarea rows="3" class="dialog-form-text-input" id="add-bookmark-comments"></textarea>
+					</div>
+
+					<div>
+						<label>Private<input type="checkbox" id="add-bookmark-private"></label>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div id="edit-bookmark-dialog" style="display:none">
+			<div class="yui3-widget-bd">
+				<div class="dialog-form-parent">
+
+					<div class="dialog-form-inner">
+						<label class="dialog-form-label">Title</label>
+						<input class="dialog-form-text-input" type="text" id="edit-bookmark-title">
+					</div>
+
+					<div class="dialog-form-inner">
+						<label class="dialog-form-label">Location (URL)</label>
+						<input class="dialog-form-text-input" type="text" id="edit-bookmark-url">
+					</div>
+
+					<div class="dialog-form-inner">
+						<label class="dialog-form-label">Tags</label>
+						<input class="dialog-form-text-input" type="text" id="edit-bookmark-tags">
+					</div>
+
+					<div class="dialog-form-inner">
+						<label class="dialog-form-label">Comments</label>
+						<textarea rows="3" class="dialog-form-text-input" id="edit-bookmark-comments"></textarea>
+					</div>
+
+					<div>
+						<label>Private<input type="checkbox" id="edit-bookmark-private"></label>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div id="delete-bookmark-dialog" style="display:none">
+			<div class="yui3-widget-bd">
+				<div id="delete-bookmark-url" style="display:none"></div>
+				<div id="delete-bookmark-dialog-msg"></div>
+			</div>
+		</div>
+	</div>
 </body>

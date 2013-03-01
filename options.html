@@ -1,13 +1,172 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-	<link type="text/css" rel="stylesheet" href="css/jquery-ui-1.10.0.custom.min.css" />
-	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
-	<script type="text/javascript" src="js/jquery-ui-1.10.0.custom.min.js"></script>
+	<link type="text/css" rel="stylesheet" href="css/fonts-min.css" />
+	<link type="text/css" rel="stylesheet" href="css/ui.css" />
+	<script type="text/javascript" src="js/config.js"></script>
+	<script type="text/javascript" src="yui3/build/yui/yui-min.js"></script>
 	<script type="text/javascript" src="js/options.js"></script>
-	<title>Delicious Bookmarks Options</title>
+	<title>Delicious Options</title>
 </head>
 
-<body style="width: 200px">
-	Popup
+<body class="yui3-skin-sam delicious-opts-page">
+	<div id="opts-container"></div>
+		<div id="delicious-opts-header">
+			<div id="header-content">
+				<img src="images/delicious48.png" style="vertical-align:middle; margin-right:20px">Delicious Bookmarks for Chrome
+			</div>
+		</div>
+		<div id="delicious-opts">
+			<ul>
+				<li><a href="#delicious-opt-account">Account</a></li>
+				<li><a href="#delicious-opt-bookmarks">Bookmarks</a></li>
+				<li><a href="#delicious-opt-tree-ui">Tree UI</a></li>
+				<li><a href="#delicious-opt-about">About</a></li>
+				<!--<li><a href="#delicious-opt-popup-ui">Popup UI</a></li>-->
+			</ul>
+			<div>
+				<div id="delicious-opt-account">
+					<div class="delicious-option-block">
+						<h3>Delicious Account Settings</h3>
+						<table border="0">
+							<tr>
+								<td width="130px">Username</td>
+								<td><input type="text" id="delicious-option-auth-username" width="40" placeholder="Delicious Username"></td>
+							</tr>
+							<tr>
+								<td width="130px">Password</td>
+								<td><input type="password" id="delicious-option-auth-password" width="40" placeholder="Delicious Password"></td>
+							</tr>
+							<tr>
+								<td width="130px">Enable Debugging</td>
+								<td><input type="checkbox" id="delicious-option-debug" checked="checked"></td>
+							</tr>
+							<tr>
+								<td width="130px"><button class='yui3-button' id="delicious-opt-account-submit">Save</button></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+
+				<div id="delicious-opt-bookmarks">
+					<div class="delicious-option-block">
+						<h3>Bookmarks Settings</h3>
+						<table border="0">
+							<tr>
+								<td class="option" width="170px">Open in New Tab:</td>
+								<td><input type="checkbox" id="delicious-option-bookmarks-open-new-tab" checked="checked"></td>
+							</tr>
+							<!--<tr>
+								<td class="option" width="170px">Tag Untagged Bookmarks:</td>
+								<td>
+									<input type="checkbox" id="delicious-option-bookmarks-tag-untagged">
+									<input type="text" id="delicious-option-bookmarks-untagged" width="40" value="Unsorted" disabled>
+								</td>
+							</tr>-->
+							<tr>
+								<td class="option" width="170px">Sort By:</td>
+								<td>
+									<select id="delicious-option-bookmarks-sort-by">
+										<option value="none">None</option>
+										<option value="title" selected>Title</option>
+										<option value="Timestamp">Timestamp</option>
+									</select>
+									<select id="delicious-option-bookmarks-sort-direction">
+										<option value="ascending" selected>Ascending</option>
+										<option value="descending">Descending</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td width="170px"><button class='yui3-button' id="delicious-opt-bookmarks-submit">Save</button></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+
+				<div id="delicious-opt-tree-ui">
+					<div class="delicious-option-block">
+						<h3>Tree UI Settings</h3>
+						<table border="0">
+							<tr>
+								<td class="option" width="215px">Show Tooltips:</td>
+								<td>
+									<input type="checkbox" id="delicious-option-treeui-show-tooltips">
+								</td>
+							</tr>
+							<tr>
+								<td class="option" width="215px">Show Name in Tooltips:</td>
+								<td>
+									<input type="checkbox" class="tooltip-option" id="delicious-option-treeui-show-name-in-tooltips">
+								</td>
+							</tr>
+							<tr>
+								<td class="option" width="215px">Show URL in Tooltips:</td>
+								<td>
+									<input type="checkbox" class="tooltip-option" id="delicious-option-treeui-show-url-in-tooltips">
+								</td>
+							</tr>
+							<tr>
+								<td  class="option"width="215px">Show Tags in Tooltips:</td>
+								<td>
+									<input type="checkbox" class="tooltip-option" id="delicious-option-treeui-show-tags-in-tooltips">
+								</td>
+							</tr>
+							<tr>
+								<td  class="option"width="215px">Show Comments in Tooltips:</td>
+								<td>
+									<input type="checkbox" class="tooltip-option" id="delicious-option-treeui-show-comments-in-tooltips">
+								</td>
+							</tr>
+							<tr>
+								<td class="option" width="215px">Show Timestamp in Tooltips:</td>
+								<td>
+									<input type="checkbox" class="tooltip-option" id="delicious-option-treeui-show-timestamp-in-tooltips">
+								</td>
+							</tr>
+							<tr>
+								<td class="option" width="215px">Expand Folders on Mouse Over:</td>
+								<td>
+									<input type="checkbox" id="delicious-option-treeui-expand-on-mouseover">
+								</td>
+							</tr>
+							<tr>
+								<td width="30%"><button class='yui3-button' id="delicious-opt-treeui-submit">Save</button></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+
+				<!--div id="delicious-opt-popup-ui">
+					<div class="delicious-option-block">
+						<h3>Popup UI Settings</h3>
+					</div>
+				</div>-->
+
+				<div id="delicious-opt-about">
+					<div id="about-scrollbox-container">
+						<div id="about-scrollbox-text">
+<b>Thanks</b><br>
+I want to thank the following people for making this project possible.<br><br>
+
+Jim Nuzzi, author of the excellent YAGBE (http://www.jimnuzzi.com/YAGBE/). Jim took the time to answer all of my questions and was always willing to help.<br><br>
+
+The entire YUI team at Yahoo!<br><br>
+
+Ryan Grove, author of the SmugMug Treeview module I am using for this extension.<br><br>
+<b>License</b><br>
+Delicious Bookmarks for Chrome<br>
+Copyright (C) 2013  Gary Danko<br><br>
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.<br><br>
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.<br><br>
+
+You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.<br>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
